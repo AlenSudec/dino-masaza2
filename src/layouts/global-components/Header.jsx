@@ -102,6 +102,7 @@ function MobileToggleSidemenu({ setIsSideMenuOpened }) {
 		>
 			<span className="icon-menu h3">
 			</span>
+
 		</div>
 	</div>
 

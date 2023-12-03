@@ -1,4 +1,7 @@
 import React from "react";
+import ReactOwlCarousel from "react-owl-carousel";
+import { sliderSettings } from "../data";
+
 
 export function HappyCustomers() {
     return (
@@ -13,7 +16,63 @@ export function HappyCustomers() {
 
                     <div className="col-12">
 
-                        <div className="owl-carousel-2 owl-carousel">
+                        <ReactOwlCarousel className="owl-carousel-2 owl-carousel"
+                            {...sliderSettings}
+                        >
+
+                            <div className="d-block block-testimony mx-auto text-center">
+                                <div className="person w-25 mx-auto mb-4">
+                                    <img src="images/person_1.jpg" alt="SomeImage" className="img-fluid rounded-circle w-50 mx-auto" />
+                                </div>
+                                <div>
+                                    <h2 className="h5 mb-4">Katie Johnson</h2>
+                                    <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div className="d-block block-testimony mx-auto text-center">
+                                <div className="person w-25 mx-auto mb-4">
+                                    <img src="images/person_2.jpg" alt="SomeImage" className="img-fluid rounded-circle w-50 mx-auto" />
+                                </div>
+                                <div>
+                                    <h2 className="h5 mb-4">Jun Mars</h2>
+                                    <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div className="d-block block-testimony mx-auto text-center">
+                                <div className="person w-25 mx-auto mb-4">
+                                    <img src="images/person_3.jpg" alt="SomeImage" className="img-fluid rounded-circle w-50 mx-auto" />
+                                </div>
+                                <div>
+                                    <h2 className="h5 mb-4">Katie Johnson</h2>
+                                    <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div className="d-block block-testimony mx-auto text-center">
+                                <div className="person w-25 mx-auto mb-4">
+                                    <img src="images/person_4.jpg" alt="SomeImage" className="img-fluid rounded-circle w-50 mx-auto" />
+                                </div>
+                                <div>
+                                    <h2 className="h5 mb-4">Jun Mars</h2>
+                                    <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+
+                        </ReactOwlCarousel>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+/*
+    <div className="owl-carousel-2 owl-carousel">
 
                             <div className="d-block block-testimony mx-auto text-center">
                                 <div className="person w-25 mx-auto mb-4">
@@ -57,11 +116,4 @@ export function HappyCustomers() {
 
 
                         </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    )
-}
+*/

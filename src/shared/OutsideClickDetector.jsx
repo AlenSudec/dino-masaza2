@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const OutsideClickDetector = ({ children, onOutsideClick }) => {
   const wrapperRef = useRef(null);
