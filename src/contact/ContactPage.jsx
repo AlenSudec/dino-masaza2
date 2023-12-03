@@ -1,66 +1,10 @@
+import { Hero } from "../shared";
+
 export function ContactPage(){
     return (
   <>
 
-    <div className="site-mobile-menu">
-      <div className="site-mobile-menu-header">
-        <div className="site-mobile-menu-close mt-3">
-          <span className="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div className="site-mobile-menu-body"></div>
-    </div>
-    
-    <header className="site-navbar" role="banner">
-
-      <div className="container">
-        <div className="row align-items-center">
-          
-          <div className="col-11 col-xl-4">
-            <h1 className="mb-0 site-logo"><a href="http://localhost/" className="text-white mb-0">PhysicalTherapy<span className="text-primary">.</span> </a></h1>
-          </div>
-          <div className="col-12 col-md-8 d-none d-xl-block">
-            <nav className="site-navigation position-relative text-right" role="navigation">
-
-              <ul className="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="http://localhost/"><span>Home</span></a></li>
-                <li className="has-children">
-                  <a href="http://localhost/"><span>Services</span></a>
-                  <ul className="dropdown arrow-top">
-                    <li><a href="http://localhost/">Physical Therapy</a></li>
-                    <li><a href="http://localhost/">Massage Therapy</a></li>
-                    <li><a href="http://localhost/">Chiropractic Therapy</a></li>
-                    <li className="has-children">
-                      <a href="http://localhost/">Dropdown</a>
-                      <ul className="dropdown">
-                        <li><a href="http://localhost/">Physical Therapy</a></li>
-                        <li><a href="http://localhost/">Massage Therapy</a></li>
-                        <li><a href="http://localhost/">Chiropractic Therapy</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="http://localhost/"><span>About</span></a></li>
-                <li><a href="http://localhost/"><span>Blog</span></a></li>
-                <li className="active"><a href="http://localhost/"><span>Contact</span></a></li>
-              </ul>
-            </nav>
-          </div>
-
-
-          <div className="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style={{position: "relative", top: "3px"}}><a href="http://localhost/" className="site-menu-toggle js-menu-toggle text-white"><span className="icon-menu h3"></span></a></div>
-
-          </div>
-
-        </div>
-      
-    </header>
-
-
-
-  
-
-    <div className="site-blocks-cover overlay" style={{backgroundImage: "url(images/hero_bg_1.jpg)"}} data-aos="fade" data-stellar-background-ratio="0.5">
+    {/* <div className="site-blocks-cover overlay" style={{backgroundImage: "url(images/hero_bg_1.jpg)"}} data-aos="fade" data-stellar-background-ratio="0.5">
       <div className="container">
         <div className="row align-items-center justify-content-center text-center">
 
@@ -75,7 +19,9 @@ export function ContactPage(){
           </div>
         </div>
       </div>
-    </div>  
+    </div>   */}
+
+    <Hero start={"Get"} words={["opet something","i opet"]} />
 
     <div className="site-section bg-light">
       <div className="container">
@@ -170,69 +116,6 @@ export function ContactPage(){
       </div>
     </div>
     
-    <footer className="site-footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-9">
-            <div className="row">
-              <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                <h2 className="footer-heading mb-4">Quick Links</h2>
-                <ul className="list-unstyled">
-                  <li><a href="http://localhost/">About Us</a></li>
-                  <li><a href="http://localhost/">Services</a></li>
-                  <li><a href="http://localhost/">Testimonials</a></li>
-                  <li><a href="http://localhost/">Contact Us</a></li>
-                </ul>
-              </div>
-              <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                <h2 className="footer-heading mb-4">Products</h2>
-                <ul className="list-unstyled">
-                  <li><a href="http://localhost/">About Us</a></li>
-                  <li><a href="http://localhost/">Services</a></li>
-                  <li><a href="http://localhost/">Testimonials</a></li>
-                  <li><a href="http://localhost/">Contact Us</a></li>
-                </ul>
-              </div>
-              <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                <h2 className="footer-heading mb-4">Features</h2>
-                <ul className="list-unstyled">
-                  <li><a href="http://localhost/">About Us</a></li>
-                  <li><a href="http://localhost/">Services</a></li>
-                  <li><a href="http://localhost/">Testimonials</a></li>
-                  <li><a href="http://localhost/">Contact Us</a></li>
-                </ul>
-              </div>
-              <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                <h2 className="footer-heading mb-4">Follow Us</h2>
-                <a href="http://localhost/" className="pl-0 pr-3"><span className="icon-facebook"></span></a>
-                <a href="http://localhost/" className="pl-3 pr-3"><span className="icon-twitter"></span></a>
-                <a href="http://localhost/" className="pl-3 pr-3"><span className="icon-instagram"></span></a>
-                <a href="http://localhost/" className="pl-3 pr-3"><span className="icon-linkedin"></span></a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <h2 className="footer-heading mb-4">Subscribe Newsletter</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <form action="#" method="post" className="subscription">
-              <div className="input-group mb-3  d-flex align-items-stretch">
-                <input type="text" className="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2"/>
-                <button className="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="row pt-5 mt-5">
-          <div className="col-12 text-md-center text-left">
-            <p>
-            {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
     </>
     )
 }

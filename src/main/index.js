@@ -1,8 +1,7 @@
 export * from "./Discount";
-export * from "./Footer";
+
 export * from "./HappyCustomers";
-export * from "./Header";
-export * from "./Hero";
+
 export * from "./Offers";
 export * from "./QuickInfo";
 export * from "./Services";

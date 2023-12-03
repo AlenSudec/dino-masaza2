@@ -1,11 +1,9 @@
-import { Header, Hero, QuickInfo, Services, Statistics, Offers, HappyCustomers, Discount, Footer } from "."
+import { QuickInfo, Services, Statistics, Offers, HappyCustomers, Discount } from "."
+import { Hero } from "../shared"
 
 export function MainPage() {
    return <>
-
-      <Header />
-
-      <Hero />
+      <Hero start="We give solutions to your" words={["pain", "stress", "fatigue"]} withNavigation/>
 
       <QuickInfo />
 
@@ -18,8 +16,6 @@ export function MainPage() {
       <HappyCustomers />
 
       <Discount />
-
-      <Footer />
    </>
 
 }

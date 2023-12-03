@@ -1,17 +1,20 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MainPage } from "../main";
-import { Header } from "../services";
+import { ServicesPage } from "../services";
 import { ContactPage } from "../contact";
 import { AboutPage } from "../about";
 import { BlogPage, SingleBlogPage } from "../blog";
+import { Header, Footer } from "./global-components";
 
 let router = createBrowserRouter([
     {
         path: "/",
         Component() {
             return (
-                <MainPage />
+                <LayoutWrapper>
+                    <MainPage />
+                </LayoutWrapper>
             )
         }
     },
@@ -19,7 +22,9 @@ let router = createBrowserRouter([
         path: '/services',
         Component() {
             return (
-                <Header />
+                <LayoutWrapper>
+                    <ServicesPage />
+                </LayoutWrapper>
             )
         }
     },
@@ -27,35 +32,55 @@ let router = createBrowserRouter([
         path: "/contact",
         Component() {
             return (
-                <ContactPage />
+                <LayoutWrapper>
+                    <ContactPage />
+                </LayoutWrapper>
             )
         }
     },
     {
         path: "/about",
         Component() {
-            return <AboutPage />
+            return (
+                <LayoutWrapper>
+                    <AboutPage />
+                </LayoutWrapper>
+            )
         }
 
     },
     {
         path: "/blog",
         Component() {
-            return <BlogPage />
+            return (
+                <LayoutWrapper>
+                    <BlogPage />
+                </LayoutWrapper>
+            )
         }
     },
     {
         path: "/single-blog-post",
         Component() {
-            return <SingleBlogPage />
+            return (
+                <LayoutWrapper>
+                    <SingleBlogPage />
+                </LayoutWrapper>
+            )
         }
     }
 ])
 
-export function MainLayout(){
+export function MainLayout() {
     return (
-        <div className="site-wrap">
-            <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
-        </div>
+        <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
     )
+}
+
+function LayoutWrapper({ children }) {
+    return <div className="site-wrap">
+        <Header />
+            {children}
+        <Footer />
+    </div>
 }

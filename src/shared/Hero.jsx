@@ -1,9 +1,15 @@
 import React from "react";
 import { useTypedInstance } from "../hooks";
 
-export function Hero() {
+/**
+ * @param start string, start of hero title 
+ * @param words string[] , e.g ["stress","relief"] 
+ * @param withNavigation boolean
+ * @returns JSX.Element
+ */
+export function Hero({start,words, withNavigation}) {
 
-  const el = useTypedInstance(["pain", "stress", "fatigue"]);
+  const el = useTypedInstance(words);
 
   return (
     <div className="site-blocks-cover overlay" style={{ backgroundImage: "url(images/hero_bg_1.jpg)" }} data-aos="fade" data-stellar-background-ratio="0.5">
@@ -14,9 +20,9 @@ export function Hero() {
 
             <div className="row justify-content-center mb-4">
               <div className="col-md-10 text-center">
-                <h1 data-aos="fade-up" className="mb-5">We give solutions to your <span className="typed-words" ref={el}></span></h1>
+                <h1 data-aos="fade-up" className="mb-5">{start} <span className="typed-words" ref={el}></span></h1>
 
-                <p data-aos="fade-up" data-aos-delay="100"><a href="http://localhost:3000" className="btn btn-primary btn-pill">Get Started</a></p>
+                {withNavigation && <p data-aos="fade-up" data-aos-delay="100"><a href="http://localhost:3000" className="btn btn-primary btn-pill">Get Started</a></p>}
               </div>
             </div>
 
