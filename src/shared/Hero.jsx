@@ -14,7 +14,6 @@ export function Hero({ start, words, withNavigation }) {
 
   return (
     <Parallax strength={300} bgImage="images/hero_bg_1.jpg" >
-      bebo
       <div className="site-blocks-cover overlay" data-aos="fade">
         <div className="container">
           <div className="row align-items-center justify-content-center text-center">
