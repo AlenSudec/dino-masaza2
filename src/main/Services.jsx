@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { cmsApiCalls } from "../api-calls";
 
 
 /*
@@ -45,13 +45,10 @@ export function Services({ isAdmin }) {
 	const [offers, setOffers] = React.useState(null)
 
 	const fetchOffers = React.useCallback(async () => {
-		var requestOptions = {
-			method: 'GET',
-			redirect: 'follow'
-		};
+
 		try {
-			const offers = await fetch("http://localhost:3000/", requestOptions)
-			setOffers(await offers.json())
+			const offers = await cmsApiCalls.fetchServicesInfo();
+			setOffers(await offers.json());
 		} catch (error) {
 			console.error(error);
 		}
@@ -104,13 +101,7 @@ function OfferComponent({ offer, isAdmin }) {
 		console.log(updatedValues)
 		//do update request;
 		try {
-			const response = await fetch(`http://localhost:3000/${offer.id}`, {
-				method: 'PUT',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(updatedValues),
-			});
+			const response = await cmsApiCalls.updateServicesInfo(offer.id, updatedValues);
 
 			if(!response.ok){
 				console.log("failed")
