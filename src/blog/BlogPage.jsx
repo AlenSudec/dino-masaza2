@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Blogone } from "./components/blogone"
 import { Hero } from "../shared"
 
 export function BlogPage() {
@@ -32,7 +32,8 @@ export function BlogPage() {
             <div class="col-md-8">
 
               <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+                <Blogone />
+                {/* <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                   <div class="h-entry">
                     <Link to="/single-blog-post">
                       <img src="images/img_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid" />
@@ -43,7 +44,7 @@ export function BlogPage() {
                       </div>
                     </Link>
                   </div>
-                </div>
+                </div> */}
                 <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                   <div class="h-entry">
                     <a href="http://localhost"><img src="images/img_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid" /></a>
