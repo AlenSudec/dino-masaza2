@@ -9,11 +9,21 @@ import { Header, Footer } from "./global-components";
 
 let router = createBrowserRouter([
     {
+        path: "/admin",
+        Component() {
+            return (
+                <LayoutWrapper>
+                    <MainPage isAdmin={true}/>
+                </LayoutWrapper>
+            )
+        }
+    },
+    {
         path: "/",
         Component() {
             return (
                 <LayoutWrapper>
-                    <MainPage />
+                    <MainPage isAdmin={false}/>
                 </LayoutWrapper>
             )
         }
