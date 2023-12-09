@@ -3,7 +3,7 @@ import { Hero } from "../shared"
 
 export function MainPage() {
    return <>
-      <Hero start="We give solutions to your" words={["pain", "stress", "fatigue"]} withNavigation/>
+      <Hero start="We give solutions to your test" words={["pain", "stress", "fatigue"]} withNavigation/>
 
       <QuickInfo />
 
