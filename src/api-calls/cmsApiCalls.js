@@ -3,7 +3,10 @@ export class cmsApiCalls {
     static async fetchServicesInfo(){
         var requestOptions = {
 			method: 'GET',
-			redirect: 'follow'
+			redirect: 'follow',
+            headers: {
+                'Content-Type': 'application/json',
+            },
 		};
 
         return await fetch(`${process.env.REACT_APP_API_KEY}/`, requestOptions);
