@@ -68,7 +68,7 @@ export function Services({ isAdmin }) {
 			<div className="container">
 				<div className="row">
 					<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-						<h3 className="mb-3">What We Offer</h3>
+						<h3 className="mb-3">What We Offer-TEST</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia rerum, aliquid velit minima inventore ad consequatur accusamus dolor.</p>
 						<p><a href="http://localhost:3000" className="d-inline-flex align-items-center block-service-1-more"><span>See all services</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
 					</div>
