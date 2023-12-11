@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { cmsApiCalls } from "../api-calls";
 
 
@@ -10,70 +10,79 @@ text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, und
 linkTo: http://localhost:3000
 */
 
-// const offers = [
-// 	{
-// 		title: 'Physical Therapy',
-// 		abrv: 'physical-therapy',
-// 		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-// 		linkTo: 'http://localhost:3000',
-// 		linkText: 'Find out more',
-// 		image: 'images/img_1.jpg'
-// 	},
-// 	{
-// 		title: 'Massage Therapy',
-// 		abrv: 'massage-therapy',
-// 		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-// 		linkTo: 'http://localhost:3000',
-// 		linkText: 'Find out more',
-// 		image: 'images/img_2.jpg'
-// 	},
-// 	{
-// 		title: 'Chiropractic Therapy',
-// 		abrv: 'chiropractic-therapy',
-// 		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-// 		linkTo: 'http://localhost:3000',
-// 		linkText: 'Find out more',
-// 		image: 'images/img_3.jpg'
-// 	},
-
-// ]
-
-
+const data = {
+	main: {
+		title: "What We Offer",
+		content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia rerum, aliquid velit minima inventore ad consequatur accusamus dolor.",
+		link: "http://localhost:3000",
+		linktext: "See all services"
+	},
+	offers: [
+		{
+			id: 1,
+			title: 'Physical Therapy',
+			abrv: 'physical-therapy',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
+			linkto: 'http://localhost:3000',
+			linktext: 'Find out more',
+			image: 'images/img_1.jpg'
+		},
+		{
+			id: 2,
+			title: 'Massage Therapy',
+			abrv: 'massage-therapy',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
+			linkto: 'http://localhost:3000',
+			linktext: 'Find out more',
+			image: 'images/img_2.jpg'
+		},
+		{
+			id: 3,
+			title: 'Chiropractic Therapy',
+			abrv: 'chiropractic-therapy',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
+			linkto: 'http://localhost:3000',
+			linktext: 'Find out more',
+			image: 'images/img_3.jpg'
+		},
+	
+	]
+}
 
 export function Services({ isAdmin }) {
 
-	const [offers, setOffers] = React.useState(null)
+	// const [offers, setOffers] = React.useState(null)
 
-	const fetchOffers = React.useCallback(async () => {
+	// const fetchOffers = React.useCallback(async () => {
 
-		try {
-			const offers = await cmsApiCalls.fetchServicesInfo();
-			setOffers(await offers.json());
-		} catch (error) {
-			console.error(error);
-		}
+	// 	try {
+	// 		const offers = await cmsApiCalls.fetchServicesInfo();
+	// 		setOffers(await offers.json());
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
 
-	}, [])
+	// }, [])
 
-	React.useEffect(() => {
-		fetchOffers();
-	}, [fetchOffers])
+	// React.useEffect(() => {
+	// 	fetchOffers();
+	// }, [fetchOffers])
 
-	if (!offers) {
-		return <div>Loading...</div>
-	}
+	// if (!offers) {
+	// 	return <div>Loading...</div>
+	// }
 
 	return (
 		<div className="block-services-1 py-5">
 			<div className="container">
 				<div className="row">
 					<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-						<h3 className="mb-3">What We Offer-TEST</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia rerum, aliquid velit minima inventore ad consequatur accusamus dolor.</p>
-						<p><a href="http://localhost:3000" className="d-inline-flex align-items-center block-service-1-more"><span>See all services</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
+						<h3 className="mb-3">{data.main.title}</h3>
+						<p>{data.main.content}</p>
+						<p><a href={data.main.link} className="d-inline-flex align-items-center block-service-1-more"><span>{data.main.linktext}</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
 					</div>
 
-					{offers.map(offer => <OfferComponent offer={offer} isAdmin={isAdmin} key={offer.id} />)}
+					{data.offers.map(offer => <OfferComponent offer={offer} isAdmin={isAdmin} key={offer.id} />)}
 
 				</div>
 			</div>
@@ -89,7 +98,6 @@ function OfferComponent({ offer, isAdmin }) {
 	const {
 		id,
 		title,
-		abrv,
 		text,
 		linkto,
 		linktext,
@@ -101,7 +109,7 @@ function OfferComponent({ offer, isAdmin }) {
 		console.log(updatedValues)
 		//do update request;
 		try {
-			const response = await cmsApiCalls.updateServicesInfo(offer.id, updatedValues);
+			const response = await cmsApiCalls.updateServicesInfo(id, updatedValues);
 
 			if(!response.ok){
 				console.log("failed")
