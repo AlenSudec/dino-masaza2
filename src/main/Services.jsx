@@ -1,6 +1,6 @@
 import React from "react";
 import { cmsApiCalls } from "../api-calls";
-
+import { servicesData } from "../data";
 
 /*
 OFFER
@@ -9,45 +9,6 @@ abrv: phisycal-therapy
 text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!
 linkTo: http://localhost:3000
 */
-
-const data = {
-	main: {
-		title: "What We Offer",
-		content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia rerum, aliquid velit minima inventore ad consequatur accusamus dolor.",
-		link: "http://localhost:3000",
-		linktext: "See all services"
-	},
-	offers: [
-		{
-			id: 1,
-			title: 'Physical Therapy',
-			abrv: 'physical-therapy',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-			linkto: 'http://localhost:3000',
-			linktext: 'Find out more',
-			image: 'images/img_1.jpg'
-		},
-		{
-			id: 2,
-			title: 'Massage Therapy',
-			abrv: 'massage-therapy',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-			linkto: 'http://localhost:3000',
-			linktext: 'Find out more',
-			image: 'images/img_2.jpg'
-		},
-		{
-			id: 3,
-			title: 'Chiropractic Therapy',
-			abrv: 'chiropractic-therapy',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit molestias inventore, id sed, in harum tenetur earum.',
-			linkto: 'http://localhost:3000',
-			linktext: 'Find out more',
-			image: 'images/img_3.jpg'
-		},
-	
-	]
-}
 
 export function Services({ isAdmin }) {
 
@@ -77,12 +38,12 @@ export function Services({ isAdmin }) {
 			<div className="container">
 				<div className="row">
 					<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-						<h3 className="mb-3">{data.main.title}</h3>
-						<p>{data.main.content}</p>
-						<p><a href={data.main.link} className="d-inline-flex align-items-center block-service-1-more"><span>{data.main.linktext}</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
+						<h3 className="mb-3">{servicesData.main.title}</h3>
+						<p>{servicesData.main.content}</p>
+						<p><a href={servicesData.main.link} className="d-inline-flex align-items-center block-service-1-more"><span>{servicesData.main.linktext}</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
 					</div>
 
-					{data.offers.map(offer => <OfferComponent offer={offer} isAdmin={isAdmin} key={offer.id} />)}
+					{servicesData.offers.map(offer => <OfferComponent offer={offer} isAdmin={isAdmin} key={offer.id} />)}
 
 				</div>
 			</div>

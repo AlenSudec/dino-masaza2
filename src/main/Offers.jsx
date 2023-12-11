@@ -1,38 +1,5 @@
 import React from "react";
-
-const data = {
-    title: "Our Special Offers",
-    offers: [
-        {
-            title: "Physical Therapy",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!",
-            link: "http://localhost:3000",
-            buttontext: "Learn More",
-            backgroundimage: "img_1.jpg"
-        },
-        {
-            title: "Physical Therapy",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!",
-            link: "http://localhost:3000",
-            buttontext: "Learn More",
-            backgroundimage: "img_2.jpg"
-        },
-        {
-            title: "Physical Therapy",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!",
-            link: "http://localhost:3000",
-            buttontext: "Learn More",
-            backgroundimage: "img_3.jpg"
-        },
-        {
-            title: "Physical Therapy",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!",
-            link: "http://localhost:3000",
-            buttontext: "Learn More",
-            backgroundimage: "img_4.jpg"
-        },
-    ]
-}
+import { offerData } from "../data";
 
 export function Offers() {
     return (
@@ -40,7 +7,7 @@ export function Offers() {
             <div className="container">
                 <div className="row mb-5">
                     <div className="col-md-12 text-center">
-                        <h2 className="site-section-heading text-center font-secondary">{data.title}</h2>
+                        <h2 className="site-section-heading text-center font-secondary">{offerData.title}</h2>
                     </div>
                 </div>
             </div>
@@ -48,13 +15,13 @@ export function Offers() {
                 {/* {offers.map((offer,i) => <OfferItem item={offer} index={i} />)} */}
                 {/* TODO: this is done stupidly in css, need to adjust this later */}
                 <div className="d-block d-lg-flex">
-                    <OfferItem item={data.offers[0]} index={0} arrowclass="half bg-white d-block d-md-flex arrow-right" />
-                    <OfferItem item={data.offers[1]} index={1} arrowclass="half bg-white d-block d-md-flex arrow-right" />
+                    <OfferItem item={offerData.offers[0]} index={0} arrowclass="half bg-white d-block d-md-flex arrow-right" />
+                    <OfferItem item={offerData.offers[1]} index={1} arrowclass="half bg-white d-block d-md-flex arrow-right" />
                 </div>
 
                 <div className="d-block d-lg-flex">
-                    <OfferItem item={data.offers[2]} index={2} arrowclass="half bg-white d-block d-md-flex arrow-left order-md-2" />
-                    <OfferItem item={data.offers[3]} index={3} arrowclass="half bg-white d-block d-md-flex arrow-left order-md-2" />
+                    <OfferItem item={offerData.offers[2]} index={2} arrowclass="half bg-white d-block d-md-flex arrow-left order-md-2" />
+                    <OfferItem item={offerData.offers[3]} index={3} arrowclass="half bg-white d-block d-md-flex arrow-left order-md-2" />
                 </div>
             </div>
         </div>

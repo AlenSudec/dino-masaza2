@@ -1,31 +1,5 @@
 import React from "react";
-
-const data = [
-  {
-    iconClass: "icon-home",
-    title: "Visit our location",
-    content: "2875 Beechwood Drive",
-    link: null
-  },
-  {
-    iconClass: "icon-phone",
-    title: "Call us today",
-    content: "+(123) 456 7890",
-    link: "http://localhost:3000"
-  },
-  {
-    iconClass: "icon-envelope",
-    title: "Send us a message",
-    content: "info@mysite.com",
-    link: "http://localhost:3000"
-  },
-  {
-    iconClass: "icon-clock-o",
-    title: "Opening hours",
-    content: "Mon-Fri 7:AM - 5PM",
-    link: null
-  },
-]
+import { quickInfoData } from "../data";
 
 export function QuickInfo() {
   return (
@@ -33,7 +7,7 @@ export function QuickInfo() {
       <div className="container">
         <div className="block-quick-info-2-inner">
           <div className="row">
-            {data.map(infoObject => <InfoObject object={infoObject} />)}
+            {quickInfoData.map(infoObject => <InfoObject object={infoObject} />)}
           </div>
         </div>
       </div>

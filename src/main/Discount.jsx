@@ -1,11 +1,4 @@
-
-const discountData = {
-  backgroundimage: "hero_bg_2.jpg",
-  discounttitle: "Up to 30% Discount for The First Commers",
-  discountcontent: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-  discountlink: "http://localhost:3000",
-  discountbuttontext: "Contact Us"
-}
+import { discountData } from "../data"
 
 export function Discount() {
   return (
