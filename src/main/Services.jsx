@@ -1,6 +1,7 @@
 import React from "react";
 import { cmsApiCalls } from "../api-calls";
-import { servicesData } from "../data";
+import { useFetchCMSData } from "../hooks";
+import { getImageUrl } from "../helpers";
 
 /*
 OFFER
@@ -9,6 +10,11 @@ abrv: phisycal-therapy
 text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, unde!
 linkTo: http://localhost:3000
 */
+
+const filter = {
+	pageAbrv: "mainPageData",
+	sectionAbrv: "services"
+}
 
 export function Services({ isAdmin }) {
 
@@ -32,6 +38,12 @@ export function Services({ isAdmin }) {
 	// if (!offers) {
 	// 	return <div>Loading...</div>
 	// }
+
+	const servicesData = useFetchCMSData(filter)
+
+	if(!servicesData){
+		return null;
+	}
 
 	return (
 		<div className="block-services-1 py-5">
@@ -131,7 +143,7 @@ function OfferComponent({ offer, isAdmin }) {
 		<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
 			<div className="block-service-1-card">
 				<a href={linkto} className="thumbnail-link d-block mb-4">
-					<img src={image} alt="SomeImage" className="img-fluid" />
+					<img src={getImageUrl(image)} alt="SomeImage" className="img-fluid" />
 				</a>
 				<h3 className="block-service-1-heading mb-3">
 					<a href={linkto}>{title}</a>

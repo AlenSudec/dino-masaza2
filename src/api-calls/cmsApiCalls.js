@@ -1,6 +1,18 @@
 export class cmsApiCalls {
     
-    static async fetchServicesInfo(){
+    // static async fetchServicesInfo(){
+    //     var requestOptions = {
+	// 		method: 'GET',
+	// 		redirect: 'follow',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+	// 	};
+
+    //     return await fetch(`${process.env.REACT_APP_API_KEY}/`, requestOptions);
+    // }
+
+    static async fetchServicesInfo(filter){
         var requestOptions = {
 			method: 'GET',
 			redirect: 'follow',
@@ -9,7 +21,8 @@ export class cmsApiCalls {
             },
 		};
 
-        return await fetch(`${process.env.REACT_APP_API_KEY}/`, requestOptions);
+        const query = new URLSearchParams(filter);
+        return await fetch(`${process.env.REACT_APP_API_KEY}?${query}`, requestOptions);
     }
     
     static async updateServicesInfo(id, body) {
@@ -19,6 +32,13 @@ export class cmsApiCalls {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(body),
+        });
+    }
+
+    static async uploadImage(body){
+        return await fetch(`${process.env.REACT_APP_API_KEY}/img-upload`, {
+            method: "POST",
+            body,
         });
     }
 }

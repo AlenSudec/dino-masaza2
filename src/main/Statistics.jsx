@@ -1,10 +1,23 @@
 import React from "react";
-import { statisticsData } from "../data";
+import { useFetchCMSData } from "../hooks";
+import { getImageUrl } from "../helpers";
+
+const filter = {
+    pageAbrv: "mainPageData",
+    sectionAbrv: "statistics"
+}
 
 export function Statistics() {
+   
+    const statisticsData = useFetchCMSData(filter);
+
+    if(!statisticsData){
+        return null;
+    }
+
     return (
         <div className="block-half-content-1 d-block d-lg-flex mt-5">
-            <div className="block-half-content-img" style={{ backgroundImage: `url('images/${statisticsData.backgroundimage}')` }}>
+            <div className="block-half-content-img" style={{ backgroundImage: `url(${getImageUrl(statisticsData.backgroundimage)})` }}>
 
             </div>
             <div className="block-half-content-text bg-primary">

@@ -1,7 +1,19 @@
 import React from "react";
-import { quickInfoData } from "../data";
+import { useFetchCMSData } from "../hooks";
+
+const filter = {
+  pageAbrv: "mainPageData",
+  sectionAbrv: "quickInfo"
+}
 
 export function QuickInfo() {
+
+  const quickInfoData = useFetchCMSData(filter);
+
+  if(!quickInfoData){
+    return null;
+  }
+
   return (
     <div className="block-quick-info-2">
       <div className="container">

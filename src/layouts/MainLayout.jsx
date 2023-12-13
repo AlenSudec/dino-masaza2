@@ -4,7 +4,6 @@ import { MainPage } from "../main";
 import { ServicesPage } from "../services";
 import { ContactPage } from "../contact";
 import { AboutPage } from "../about";
-import { BlogPage, SingleBlogPage } from "../blog";
 import { Header, Footer } from "./global-components";
 
 let router = createBrowserRouter([
@@ -58,26 +57,6 @@ let router = createBrowserRouter([
             )
         }
 
-    },
-    {
-        path: "/blog",
-        Component() {
-            return (
-                <LayoutWrapper>
-                    <BlogPage />
-                </LayoutWrapper>
-            )
-        }
-    },
-    {
-        path: "/single-blog-post",
-        Component() {
-            return (
-                <LayoutWrapper>
-                    <SingleBlogPage />
-                </LayoutWrapper>
-            )
-        }
     }
 ])
 

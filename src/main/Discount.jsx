@@ -1,8 +1,22 @@
-import { discountData } from "../data"
+import { getImageUrl } from "../helpers";
+import { useFetchCMSData } from "../hooks"
+
+const filter = {
+  pageAbrv: "mainPageData",
+  sectionAbrv: "discount"
+}
 
 export function Discount() {
+
+  const discountData = useFetchCMSData(filter);
+
+  if(!discountData) {
+    return null;
+  }
+
   return (
-    <div className="mt-5 block-cta-1 primary-overlay" style={{ backgroundImage: `url('images/${discountData.backgroundimage}')` }}>
+    // <div className="mt-5 block-cta-1 primary-overlay" style={{ backgroundImage: `url('images/${discountData.backgroundimage}')` }}>
+    <div className="mt-5 block-cta-1 primary-overlay" style={{ backgroundImage: `url(${getImageUrl(discountData.backgroundimage)})` }}>
       <div className="container">
         <div className="row align-items-center justify-content-between">
           <div className="col-lg-7 mb-4 mb-lg-0">

@@ -79,12 +79,12 @@ export const elementTree = [
         link: "/about",
         hasChildren: false
     },
-    {
-        title: "Blog",
-        classname: null,
-        link: "/blog",
-        hasChildren: false
-    },
+    // {
+    //     title: "Blog",
+    //     classname: null,
+    //     link: "/blog",
+    //     hasChildren: false
+    // },
     {
         title: "Contact",
         classname: null,
