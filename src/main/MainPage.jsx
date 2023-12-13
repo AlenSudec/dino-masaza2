@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from "react"
-import { QuickInfo, Services, Statistics, Offers, HappyCustomers, Discount } from "."
-import { Hero } from "../shared"
+import { useState } from "react"
+import { QuickInfo, Services, Offers} from ".";
+import { Hero, Statistics, Discount, HappyCustomers } from "../shared"
 import { cmsApiCalls } from "../api-calls";
 
 export function MainPage({ isAdmin }) {

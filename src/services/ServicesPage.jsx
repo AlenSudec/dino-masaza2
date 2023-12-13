@@ -1,5 +1,5 @@
 import { Hero } from "../shared";
-import {  Discount, HappyCustomers, Statistics } from "../main";
+import {  Discount, HappyCustomers, Statistics } from "../shared";
 import { ServiceItem } from "./components";
 import { useFetchCMSData } from "../hooks";
 
