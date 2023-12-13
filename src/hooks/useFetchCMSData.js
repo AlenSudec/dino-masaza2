@@ -15,7 +15,7 @@ export function useFetchCMSData(filter){
 			console.error(error);
 		}
 
-	}, [])
+	}, [filter])
 
    useEffect(() => {
       fetchOffers();
