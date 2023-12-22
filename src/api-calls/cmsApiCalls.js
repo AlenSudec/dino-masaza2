@@ -41,4 +41,17 @@ export class cmsApiCalls {
             body,
         });
     }
+
+    static async testFetchFooter(endpoint){
+        var requestOptions = {
+			method: 'GET',
+			redirect: 'follow',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+		};
+
+        // const query = new URLSearchParams(filter);
+        return await fetch(`${process.env.REACT_APP_API_KEY}/${endpoint}`, requestOptions);
+    }
 }

@@ -67,9 +67,17 @@ export function MainLayout() {
 }
 
 function LayoutWrapper({ children }) {
+
+    const [globalState, setGlobalState] = React.useState({})
+
     return <div className="site-wrap">
-        <Header />
-            {children}
-        <Footer />
+        <GlobalStateContext.Provider value={setGlobalState}>
+            <Header />
+                <button onClick={() => console.log(globalState)}>Publish</button>
+                {children}
+            <Footer />
+        </GlobalStateContext.Provider>
     </div>
 }
+
+export const GlobalStateContext = React.createContext();

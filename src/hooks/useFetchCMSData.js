@@ -19,7 +19,30 @@ export function useFetchCMSData(filter){
 
    useEffect(() => {
       fetchOffers();
-   }, [fetchOffers])
+   }, [])
 
    return data;
+}   
+
+export function useTestFetchCMSData(endpoint){
+
+   const [data, setFetchedData] = useState(null);
+
+   const fetchOffers = useCallback(async () => {
+
+     try {
+        const result = await cmsApiCalls.testFetchFooter(endpoint);
+           //400 isnt thrown for some reason
+        setFetchedData(await result.json());
+     } catch (error) {
+        console.error(error);
+     }
+
+  }, [endpoint])
+
+  useEffect(() => {
+     fetchOffers();
+  }, [fetchOffers])
+
+  return data;
 }   
