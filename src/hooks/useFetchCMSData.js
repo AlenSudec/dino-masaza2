@@ -19,7 +19,7 @@ export function useFetchCMSData(filter){
 
    useEffect(() => {
       fetchOffers();
-   }, [fetchOffers])
+   }, [])
 
    return data;
 }   

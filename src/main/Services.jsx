@@ -18,27 +18,6 @@ const filter = {
 
 export function Services({ isAdmin }) {
 
-	// const [offers, setOffers] = React.useState(null)
-
-	// const fetchOffers = React.useCallback(async () => {
-
-	// 	try {
-	// 		const offers = await cmsApiCalls.fetchServicesInfo();
-	// 		setOffers(await offers.json());
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 	}
-
-	// }, [])
-
-	// React.useEffect(() => {
-	// 	fetchOffers();
-	// }, [fetchOffers])
-
-	// if (!offers) {
-	// 	return <div>Loading...</div>
-	// }
-
 	const servicesData = useFetchCMSData(filter)
 
 	if(!servicesData){
@@ -65,9 +44,6 @@ export function Services({ isAdmin }) {
 
 function OfferComponent({ offer, isAdmin }) {
 
-	const [isEditable, setIsEditable] = React.useState(false)
-	const [updatedValues, setUpdatedValues] = React.useState(offer);
-
 	const {
 		id,
 		title,
@@ -77,67 +53,6 @@ function OfferComponent({ offer, isAdmin }) {
 		image
 	} = offer;
 
-
-	const saveChanges = async () => {
-		console.log(updatedValues)
-		//do update request;
-		try {
-			const response = await cmsApiCalls.updateServicesInfo(id, updatedValues);
-
-			if(!response.ok){
-				console.log("failed")
-			}
-
-			const updatedEntry = await response.json();
-			console.log("Updated CMS entry", updatedEntry);
-		}
-		catch (error) {
-			console.error(error)
-		}
-	}
-
-	const closeEditable = () => {
-		setUpdatedValues(offer);
-		setIsEditable(false)
-	}
-
-	if (isEditable && isAdmin) {
-		return <div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-			<div className="block-service-1-card">
-
-				<EditableComponent
-					labelText={"Image value: "}
-					valueKey="image"
-					value={image}
-					setUpdatedValues={setUpdatedValues}
-				/>
-
-				<EditableComponent
-					labelText={"Link value: "}
-					valueKey="linkto"
-					value={linkto}
-					setUpdatedValues={setUpdatedValues}
-				/>
-
-				<EditableComponent
-					labelText={"Text value: "}
-					valueKey="text"
-					value={text}
-					setUpdatedValues={setUpdatedValues}
-				/>
-
-				<EditableComponent
-					labelText={"Link text value: "}
-					valueKey="linktext"
-					value={linktext}
-					setUpdatedValues={setUpdatedValues}
-				/>
-
-				{isAdmin && <button onClick={closeEditable}>Cancel</button>}
-				{isAdmin && isEditable && <button disabled={offer === updatedValues} onClick={saveChanges}>Save</button>}
-			</div>
-		</div>
-	}
 
 	return (
 		<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
@@ -157,29 +72,7 @@ function OfferComponent({ offer, isAdmin }) {
 						<span className="icon-keyboard_arrow_right icon"></span>
 					</a>
 				</p>
-				{isAdmin && <button onClick={() => setIsEditable(true)}>Edit</button>}
 			</div>
 		</div>
 	)
-}
-
-function EditableComponent({ labelText, value, valueKey, setUpdatedValues }) {
-
-	const [valueValue, setValue] = React.useState(value)
-
-	const updateValue = (e) => {
-		setValue(e.target.value)
-		setUpdatedValues((prev) => ({
-			...prev,
-			[valueKey]: e.target.value
-		}))
-	}
-
-	return <div style={{
-		display: "flex",
-		flexDirection: "column"
-	}}>
-		<label>{labelText}</label>
-		<textarea type="text" value={valueValue} onChange={updateValue} />
-	</div>
 }
