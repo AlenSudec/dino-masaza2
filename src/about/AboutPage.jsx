@@ -6,7 +6,7 @@ export function AboutPage() {
         <>
             <Hero start={"About our"} words={["nezzznam", "hehe"]} withNavigation />
             <History />
-            <Staff />
+            {/* <Staff /> */}
             <Discount />
         </>
 

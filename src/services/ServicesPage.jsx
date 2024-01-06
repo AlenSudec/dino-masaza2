@@ -21,7 +21,7 @@ export function ServicesPage() {
 
             <Hero start={"We do our"} words={["something", "somethin1", "somethign2"]} withNavigation />
 
-            <ServiceContainer />
+            <ServiceContainer servicePageData={servicePageData}/>
 
             <Statistics />
             <HappyCustomers />

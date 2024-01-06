@@ -46,7 +46,7 @@ export function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    {/* <div className="col-lg-3">
                         <h2 className="footer-heading mb-4">{data.newsletter.title}</h2>
                         <p>{data.newsletter.content}</p>
                         <form action="#" method="post" className="subscription">
@@ -55,7 +55,7 @@ export function Footer() {
                                 <button className="btn btn-primary text-white" type="button" id="button-addon2">{data.newsletter.submittext}</button>
                             </div>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

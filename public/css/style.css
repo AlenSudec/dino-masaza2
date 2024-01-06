@@ -4,7 +4,17 @@ body {
   color: #4d4d4d;
   font-weight: 300;
   font-size: 1rem;
+  overflow: overlay;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ::-webkit-scrollbar-corner {
+  background-color: transparent;
+} */
 
 ::-moz-selection {
   background: #000;
@@ -399,7 +409,7 @@ h1, h2, h3, h4, h5,
 }
 
 .ul-check.success li:before {
-  color: #5fd080;
+  color: #046380;
 }
 
 .ul-check.primary li:before {
