@@ -1,17 +1,12 @@
 import React from "react";
 import ReactOwlCarousel from "react-owl-carousel";
 import { sliderSettings } from "../data";
-import { useFetchCMSData } from "../hooks";
+import {  useFetchSharedData } from "../hooks";
 import { getImageUrl } from "../helpers";
-
-const filter = {
-    pageAbrv: "mainPageData",
-    sectionAbrv: "customer"
-}
 
 export function HappyCustomers() {
 
-    const customersData = useFetchCMSData(filter);
+    const customersData = useFetchSharedData("happy-customers-info");
 
     if(!customersData){
         return null;

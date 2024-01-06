@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { useFetchCMSData } from "../hooks";
+import { useFetchSharedData } from "../hooks";
 import { getImageUrl } from "../helpers";
 import CountUp from "react-countup";
 
-const filter = {
-    pageAbrv: "mainPageData",
-    sectionAbrv: "statistics"
-}
-
 export function Statistics() {
 
-   
-
-    const statisticsData = useFetchCMSData(filter);
+    const statisticsData = useFetchSharedData("statistics-info");
 
     if (!statisticsData) {
         return null;

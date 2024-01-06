@@ -1,4 +1,4 @@
-import { useFetchCMSData } from "../../hooks";
+import { useFetchCMSData, useFetchSharedData } from "../../hooks";
 
 function FooterLink({ item }) {
     return (
@@ -22,12 +22,7 @@ function SocialLinks({item, index}){
 
 export function Footer() {
 
-    const filter = {
-        pageAbrv: "sharedData",
-        sectionAbrv: "footerData"
-    }
-
-    const data = useFetchCMSData(filter);
+    const data = useFetchSharedData("footer-info");
 
     if(!data){
         return null;

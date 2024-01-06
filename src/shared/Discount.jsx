@@ -1,14 +1,9 @@
 import { getImageUrl } from "../helpers";
-import { useFetchCMSData } from "../hooks"
-
-const filter = {
-  pageAbrv: "mainPageData",
-  sectionAbrv: "discount"
-}
+import { useFetchSharedData } from "../hooks"
 
 export function Discount() {
 
-  const discountData = useFetchCMSData(filter);
+  const discountData = useFetchSharedData("discount-info");
 
   if(!discountData) {
     return null;

@@ -2,13 +2,15 @@ import React from "react";
 import { Parallax } from "react-parallax";
 import { useTypedInstance } from "../hooks";
 import { getImageUrl } from "../helpers";
+import { Link } from "react-router-dom";
+
 /**
  * @param start string, start of hero title 
  * @param words string[] , e.g ["stress","relief"] 
  * @param withNavigation boolean
  * @returns JSX.Element
  */
-export function Hero({ start, words, withNavigation }) {
+export function Hero({ start, words, withNavigation, isError }) {
 
   const el = useTypedInstance(words);
 
@@ -24,7 +26,13 @@ export function Hero({ start, words, withNavigation }) {
                 <div className="col-md-10 text-center">
                   <h1 data-aos="fade-up" className="mb-5">{start} <span className="typed-words" ref={el}></span></h1>
 
-                  {withNavigation && <p data-aos="fade-up" data-aos-delay="100"><a href="http://localhost:3000" className="btn btn-primary btn-pill">Rezervirajte termin</a></p>}
+                  {withNavigation && <p data-aos="fade-up" data-aos-delay="100">
+                    <a href="http://localhost:3000" className="btn btn-primary btn-pill">Rezervirajte termin</a></p>}
+                  {isError && <p data-aos="fade-up" data-aos-delay="100">
+                    <Link to="/" className="btn btn-primary btn-pill">
+                      Početna stranica
+                    </Link>
+                  </p>}
                 </div>
               </div>
             </div>

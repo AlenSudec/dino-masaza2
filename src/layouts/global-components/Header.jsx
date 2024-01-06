@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { OutsideClickDetector } from "../../shared";
-import { elementTree } from "../../data";
-import { useHandleResize } from "../../hooks";
+// import { elementTree } from "../../data";
+import { useFetchSharedData, useHandleResize } from "../../hooks";
 
 export function Header() {
 	const [isSideMenuOpened, setIsSideMenuOpened] = useState(false);
@@ -110,8 +110,11 @@ function MobileToggleSidemenu({ setIsSideMenuOpened }) {
 
 function RouteList({ isMobile, shouldDisplayRoutes }) {
 	const { pathname } = useLocation();
+	//TODO FIX component is called twice resulting in double requests every time
+	const elementTree = useFetchSharedData("routes-info")
 
-	if (isMobile && !shouldDisplayRoutes) {
+
+	if ((isMobile && !shouldDisplayRoutes) || !elementTree) {
 		return null;
 	}
 

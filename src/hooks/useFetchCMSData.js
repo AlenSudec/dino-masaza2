@@ -22,4 +22,27 @@ export function useFetchCMSData(filter){
    }, [])
 
    return data;
+} 
+
+export function useFetchSharedData(filter){
+
+   const [data, setFetchedData] = useState(null);
+
+   const fetchOffers = useCallback(async () => {
+
+     try {
+        const result = await cmsApiCalls.fetchSharedData(filter);
+           //400 isnt thrown for some reason
+        setFetchedData(await result.json());
+     } catch (error) {
+        console.error(error);
+     }
+
+  }, [filter])
+
+  useEffect(() => {
+     fetchOffers();
+  }, [])
+
+  return data;
 }   
