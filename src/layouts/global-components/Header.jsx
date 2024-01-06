@@ -94,7 +94,7 @@ function MobileToggleSidemenu({ setIsSideMenuOpened }) {
 
 	return <div
 		className="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
-		style={{ position: "relative", top: "3px" }}
+		style={{ position: "relative" }}
 	>
 		<div
 			onClick={openSideMenu}

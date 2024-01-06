@@ -6,7 +6,7 @@ import { cmsApiCalls } from "../api-calls";
 export function MainPage({ isAdmin }) {
 
    return <>
-      <Hero start="We give solutions to your test" words={["pain", "stress", "fatigue"]} withNavigation />
+      <Hero start="Nudimo Vam rješenja protiv" words={["boli", "stresa", "zakočenosti"]} withNavigation />
 
       <QuickInfo />
 

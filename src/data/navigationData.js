@@ -1,6 +1,6 @@
 export const elementTree = [
     {
-        title: "Home",
+        title: "Početna",
         classname: null,
         link: "/",
         hasChildren: false
@@ -8,7 +8,7 @@ export const elementTree = [
     {
         classname: "has-children",
         link: '/services',
-        title: 'Services',
+        title: 'Usluge',
         isInNav: true,
         hasChildren: true,
         dropdownPointer: true,
@@ -74,7 +74,7 @@ export const elementTree = [
         ]
     },
     {
-        title: "About",
+        title: "O nama",
         classname: null,
         link: "/about",
         hasChildren: false
@@ -86,7 +86,7 @@ export const elementTree = [
     //     hasChildren: false
     // },
     {
-        title: "Contact",
+        title: "Kontakt",
         classname: null,
         link: "/contact",
         hasChildren: false
