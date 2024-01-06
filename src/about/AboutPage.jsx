@@ -1,6 +1,6 @@
 import { Hero } from "../shared";
-import { History, Staff, Discount } from "./components";
-
+import { History, Staff } from "./components";
+import { Discount } from "../shared";
 export function AboutPage() {
     return (
         <>

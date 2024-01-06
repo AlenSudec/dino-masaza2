@@ -1,11 +1,12 @@
 import { useFetchCMSData, useFetchSharedData } from "../../hooks";
+import { Link } from "react-router-dom";
 
 function FooterLink({ item }) {
     return (
         <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
             <h2 className="footer-heading mb-4">{item.title}</h2>
             <ul className="list-unstyled">
-                {item.lists.map(list => <li><a href={list.link}>{list.text}</a></li>)}
+                {item.lists.map((list, i) => <li key={i}><Link to={list.link}>{list.text}</Link></li>)}
             </ul>
         </div>
     )
@@ -34,13 +35,18 @@ export function Footer() {
                 <div className="row">
                     <div className="col-md-9">
                         <div className="row">
-                            {data.footerLinks.map(link => <FooterLink item={link} />)}
+                            {data.footerLinks.map((link, i) => <FooterLink key={i} item={link} />)}
                             <div className="col-md-6 mb-5 mb-lg-0 col-lg-3">
                                 <h2 className="footer-heading mb-4">{data.socialLinks.title}</h2>
-                                {data.socialLinks.socials.map((social, i) => <SocialLinks item={social} index={i} />)}
+                                {data.socialLinks.socials.map((social, i) => <SocialLinks key={i} item={social} index={i} />)}
                             </div>
                         </div>
                     </div>
+                    {/* <div className="col-lg-3">
+                        <a href="https://www.google.com/maps/place/OSTEOPRAKTIK,+vl.+Dino+Dudovi%C4%87/@45.6967374,17.7072603,17z/data=!3m1!4b1!4m6!3m5!1s0x47678b3ea43d0a9b:0x402d211fd28954fe!8m2!3d45.6967337!4d17.7098352!16s%2Fg%2F11l6c1wjfm?entry=ttu">
+                            <img src="images/google_img.png"/>
+                        </a>
+                    </div> */}
                     {/* <div className="col-lg-3">
                         <h2 className="footer-heading mb-4">{data.newsletter.title}</h2>
                         <p>{data.newsletter.content}</p>

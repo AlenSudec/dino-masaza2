@@ -27,7 +27,7 @@ export function HappyCustomers() {
                         <ReactOwlCarousel className="owl-carousel-2 owl-carousel"
                             {...sliderSettings}
                         >
-                            {customersData.customers.map(customer => <CarouselItem item={customer} />)}
+                            {customersData.customers.map((customer,i) => <CarouselItem key={i} item={customer} />)}
                         </ReactOwlCarousel>
                     </div>
 

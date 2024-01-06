@@ -27,7 +27,7 @@ export function Hero({ start, words, withNavigation, isError }) {
                   <h1 data-aos="fade-up" className="mb-5">{start} <span className="typed-words" ref={el}></span></h1>
 
                   {withNavigation && <p data-aos="fade-up" data-aos-delay="100">
-                    <a href="http://localhost:3000" className="btn btn-primary btn-pill">Rezervirajte termin</a></p>}
+                    <a href="https://www.facebook.com/profile.php?id=61552767607711" className="btn btn-primary btn-pill">Rezervirajte termin</a></p>}
                   {isError && <p data-aos="fade-up" data-aos-delay="100">
                     <Link to="/" className="btn btn-primary btn-pill">
                       Početna stranica

@@ -7,10 +7,12 @@ import { AboutPage } from "../about";
 import { Header, Footer } from "./global-components";
 import { SingleServicePage } from "../service-info";
 import { Hero } from "../shared";
+import ScrollToTop from "../shared/ScrollToTop";
 
 export function MainLayout() {
     return (
         <BrowserRouter>
+            <ScrollToTop/>
             <LayoutWrapper>
                 <Routes>
                     <Route path="/" element={<MainPage isAdmin={false} />} />

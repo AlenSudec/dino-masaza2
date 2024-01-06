@@ -2,6 +2,7 @@ import React from "react";
 import { cmsApiCalls } from "../api-calls";
 import { useFetchCMSData } from "../hooks";
 import { getImageUrl } from "../helpers";
+import { Link } from "react-router-dom";
 
 /*
 OFFER
@@ -31,7 +32,7 @@ export function Services({ isAdmin }) {
 					<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
 						<h3 className="mb-3">{servicesData.main.title}</h3>
 						<p>{servicesData.main.content}</p>
-						<p><a href={servicesData.main.link} className="d-inline-flex align-items-center block-service-1-more"><span>{servicesData.main.linktext}</span> <span className="icon-keyboard_arrow_right icon"></span></a></p>
+						<p><Link to={servicesData.main.link} className="d-inline-flex align-items-center block-service-1-more"><span>{servicesData.main.linktext}</span> <span className="icon-keyboard_arrow_right icon"></span></Link></p>
 					</div>
 
 					{servicesData.offers.map(offer => <OfferComponent offer={offer} isAdmin={isAdmin} key={offer.id} />)}
@@ -57,20 +58,20 @@ function OfferComponent({ offer, isAdmin }) {
 	return (
 		<div className="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
 			<div className="block-service-1-card">
-				<a href={linkto} className="thumbnail-link d-block mb-4">
+				<Link to={linkto} className="thumbnail-link d-block mb-4">
 					<img src={getImageUrl(image)} alt="SomeImage" className="img-fluid" />
-				</a>
+				</Link>
 				<h3 className="block-service-1-heading mb-3">
-					<a href={linkto}>{title}</a>
+					<Link to={linkto}>{title}</Link>
 				</h3>
 				<div className="block-service-1-excerpt">
 					<p>{text}</p>
 				</div>
 				<p>
-					<a href={linkto} className="d-inline-flex align-items-center block-service-1-more">
+					<Link to={linkto} className="d-inline-flex align-items-center block-service-1-more">
 						<span>{linktext}</span>
 						<span className="icon-keyboard_arrow_right icon"></span>
-					</a>
+					</Link>
 				</p>
 			</div>
 		</div>

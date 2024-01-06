@@ -1,5 +1,5 @@
-import { Hero } from "../shared";
-import { Form, Info, Discount } from "./components";
+import { Hero, Discount } from "../shared";
+import { Form, Info } from "./components";
 
 export function ContactPage() {
   return (

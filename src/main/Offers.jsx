@@ -1,6 +1,7 @@
 import React from "react";
 import { useFetchCMSData } from "../hooks";
 import { getImageUrl } from "../helpers";
+import { Link } from "react-router-dom";
 
 const filter = {
     pageAbrv: "mainPageData",
@@ -57,7 +58,7 @@ function OfferItem({ item, index, arrowclass }) {
                 <div className="text">
                     <h2>{title}</h2>
                     <p>{content}</p>
-                    <p><a href={link} className="btn btn-primary btn-sm btn-pill">{buttontext}</a></p>
+                    <p><Link to={link} className="btn btn-primary btn-sm btn-pill">{buttontext}</Link></p>
                 </div>
             </div>
             <div className="half bg-img img" style={{ backgroundImage: `url(${getImageUrl(backgroundimage)})` }}></div>

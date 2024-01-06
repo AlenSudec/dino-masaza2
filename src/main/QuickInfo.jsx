@@ -19,7 +19,7 @@ export function QuickInfo() {
       <div className="container">
         <div className="block-quick-info-2-inner">
           <div className="row">
-            {quickInfoData.map(infoObject => <InfoObject object={infoObject} />)}
+            {quickInfoData.map((infoObject, i) => <InfoObject key={i} object={infoObject} />)}
           </div>
         </div>
       </div>
